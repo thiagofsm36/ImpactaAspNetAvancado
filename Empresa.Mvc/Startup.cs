@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Empresa.Repositorios.SqlServer;
+using Microsoft.EntityFrameworkCore;
 
 namespace Empresa.Mvc
 {
@@ -29,6 +31,17 @@ namespace Empresa.Mvc
         {
             // Add framework services.
             services.AddMvc();
+
+            //services.AddDbContext<EmpresaDbContext>(option => option.UseSqlServer(Configuration.GetConnectionString("EmpresaConnectionString")));
+
+            services.AddDbContext<EmpresaDbContext>(TESTE_THIAGO_SetConnectionString);
+            services.AddSingleton<IConfiguration>(Configuration);
+
+        }
+
+        private void TESTE_THIAGO_SetConnectionString(DbContextOptionsBuilder obj)
+        {
+            obj.UseSqlServer(Configuration.GetConnectionString("EmpresaConnectionString"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
