@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Empresa.Repositorios.SqlServer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Http;
 
 namespace Empresa.Mvc
 {
@@ -59,6 +60,16 @@ namespace Empresa.Mvc
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+
+            app.UseCookieAuthentication(new CookieAuthenticationOptions {
+                AuthenticationScheme = Configuration.GetSection("TipoAutenticacao").Value,
+                LoginPath = new PathString("/Login/Index"),
+                AccessDeniedPath= new PathString("/Login/AcessoNegado"),
+                AutomaticChallenge = true,
+                AutomaticAuthenticate = true,
+                ExpireTimeSpan = TimeSpan.FromMinutes(20)
+                
+            });
 
             app.UseStaticFiles();
 
