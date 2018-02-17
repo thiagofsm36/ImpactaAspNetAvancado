@@ -19,5 +19,11 @@ namespace Loja.Mvc.Areas.Vendas.Controllers
         {
             return View(Mapeamento.Mapear(_db.Produtos.Where(p => p.EmLeilao == true).ToList()));
         }
+
+        public ActionResult Details(int id)
+        {
+            return View(Mapeamento.Mapear(_db.Produtos.Find(id)));
+        }
     }
+
 }
