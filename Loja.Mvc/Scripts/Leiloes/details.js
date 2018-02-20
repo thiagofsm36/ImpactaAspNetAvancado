@@ -27,8 +27,16 @@ var Details = {
         const self = this;
 
         $("#entrarButton").on("click", function () { self.entrarLeilao(); });
+        $("#enviarLanceButton").on("click", function () { self.enviarLance(); });
 
         this.leilaoHub.on("adicionarMensagem", function (nomeParticipante, connectionId, mensagem) { self.adicionarMensagem(nomeParticipante, connectionId, mensagem); });
+
+        $(document).on("click", "a[data-connection-id]", function () {
+            self.enviarLike($(this).data("connectionId"));
+            
+        });
+
+        this.leilaoHub.on("receberLike", function (nomeRemetente) { self.receberLike(nomeRemetente); });
     },
 
     entrarLeilao: function(){
@@ -61,6 +69,11 @@ var Details = {
 
         return tr;
     },
+
+    enviarLance: function () {
+        this.leilaoHub.invoke("EnviarLance", this.nomeParticipante, $("#valorLance").val(), this.produtoId);
+
+    }
 };
 
 
