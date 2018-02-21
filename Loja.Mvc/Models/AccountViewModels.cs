@@ -1,8 +1,12 @@
 ﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+using System.Web.Mvc;
 
 namespace Loja.Mvc.Models
 {
+    using System;
+    using System.ComponentModel.DataAnnotations;
+    using Validacoes;
+
     public class ExternalLoginConfirmationViewModel
     {
 
@@ -77,10 +81,16 @@ namespace Loja.Mvc.Models
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 3)]
         public string Nome { get; set; }
 
+        [Required]
+        [Display(Name = "Data de Nascimento")]
+        [IdadeMinima(18)]
+        public DateTime DataNascimento { get; set; }    
+
 
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
+        [Remote("VerificarDisponibilidadeEmail", "Account", HttpMethod = "POST", ErrorMessage = "Email já utilizado")]
         public string Email { get; set; }
 
         [Required]

@@ -173,6 +173,14 @@ namespace Loja.Mvc.Controllers
             return View(model);
         }
 
+        [HttpPost]
+        [AllowAnonymous]
+        public ActionResult VerificarDisponibilidadeEmail(string email)
+        {
+            return Json(UserManager.FindByEmail(email) == null);
+        }
+
+
         //
         // GET: /Account/ConfirmEmail
         [AllowAnonymous]

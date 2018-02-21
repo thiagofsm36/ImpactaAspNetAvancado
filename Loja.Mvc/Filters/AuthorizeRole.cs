@@ -18,5 +18,6 @@ namespace Loja.Mvc.Filters
 
             //Roles = string.Join(",", perfis.Select(p => Enum.GetName(p.GetType(), p)));
         }
+
     }
 }
