@@ -21,9 +21,17 @@
         connection.start();
     },
 
-    obterOfertas: function(){
-        this.viewModel.produtos.push({
-            id: 1, nome: "Batom", preco: 22.03, estoque: 3, categoriaNome: 'Cosméticos'
+    //obterOfertas: function(){
+    //    this.viewModel.produtos.push({
+    //        id: 1, nome: "Batom", preco: 22.03, estoque: 3, categoriaNome: 'Cosméticos'
+    //    });
+    //}
+
+    obterOfertas: function () {
+        var self = this;
+
+        return $.getJSON("/api/Vendas/Leiloes", function (produtos) {
+            self.viewModel.produtos(produtos);
         });
     }
 };
