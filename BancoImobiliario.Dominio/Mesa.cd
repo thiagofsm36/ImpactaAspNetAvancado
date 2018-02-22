@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BancoImobiliario.Dominio.Banco" Collapsed="true">
+    <Position X="7.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>Banco.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BancoImobiliario.Dominio.Jogador" Collapsed="true">
+    <Position X="7.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>Jogador.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Cor" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="BancoImobiliario.Dominio.Mesa" Collapsed="true">
+    <Position X="7.25" Y="2.75" Width="1.5" />
+    <AssociationLine Name="Tabuleiro" Type="BancoImobiliario.Dominio.Tabuleiro" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="7.25" Y="3" />
+        <Point X="5" Y="3.031" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.89" Y="0.112" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Jogadores" Type="BancoImobiliario.Dominio.Jogador" FixedFromPoint="true">
+      <Path>
+        <Point X="7.946" Y="2.75" />
+        <Point X="7.946" Y="2.062" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AIAAAAgAAAAAAAAAAAAAAAAAAAgAAAgAAAAAgAAAAAA=</HashCode>
+      <FileName>Mesa.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Tabuleiro" />
+      <Property Name="Banco" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Jogadores" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="BancoImobiliario.Dominio.Tabuleiro" Collapsed="true">
+    <Position X="3.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Tabuleiro.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="BancoImobiliario.Dominio.Cor" Collapsed="true">
+    <Position X="7.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>SAAAAAAAAAAAAAEAAAAAAAAAAAAAAAgAAAAAAYAAAAA=</HashCode>
+      <FileName>Cor.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -27,5 +27,5 @@ namespace Loja.Mvc.Helpers.Tests
             Assert.AreEqual(produto.Categoria.Nome, viewModel.CategoriaNome);
             Assert.AreEqual(produto.Preco, viewModel.Preco);
         }
-    }
+    }  
 }

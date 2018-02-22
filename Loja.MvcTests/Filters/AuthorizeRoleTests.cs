@@ -6,7 +6,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Loja.Mvc.Models;
-using System.Web.Mvc;
 
 namespace Loja.Mvc.Filters.Tests
 {
@@ -20,6 +19,8 @@ namespace Loja.Mvc.Filters.Tests
 
             Assert.IsTrue(authorizeRole.Roles.Contains("Administrador"));
             Assert.IsTrue(authorizeRole.Roles.Contains("Comprador"));
+
+            //Assert.AreEqual(authorizeRole._roles.ToString(), "Administrador,Comprador,");
         }
     }
 }
